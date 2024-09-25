@@ -1,0 +1,66 @@
+generator client {
+    provider  = "prisma-client-js"
+}
+
+datasource db {
+    provider  = "mysql"
+    url       = env("DATABASE_URL")
+}
+
+model Tipo {
+    id          Int         @id @default(autoincrement())
+    nome        String
+    descricao   String?
+    cor         String?
+    fundo       String?
+    ordem       Int         @unique
+
+    subtipos    Subtipo[]
+
+    @@map("tipos")
+}
+
+model Subtipo {
+    id          Int         @id @default(autoincrement())
+    nome        String
+    descricao   String?
+    cor         String?
+    fundo       String?
+    ordem       Int         @unique
+
+    tipo        Tipo        @relation(fields: [tipo_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    tipo_id     Int
+    unidades    Unidade[]
+
+    @@map("subtipos")
+}
+
+model Unidade {
+    id          Int         @id @default(autoincrement())
+    nome        String
+    descricao   String?
+    ordem       Int         @unique
+    cor         String?
+    fundo       String?
+
+    subtipo     Subtipo     @relation(fields: [subtipo_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    subtipo_id  Int
+    subunidades Subunidade[]
+
+    @@map("unidades")
+}
+
+model Subunidade {
+    id          Int         @id @default(autoincrement())
+    nome        String
+    descricao   String?
+    ordem       Int         @unique
+    cor         String?
+    fundo       String?
+
+    unidade     Unidade     @relation(fields: [unidade_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    unidade_id  Int
+
+    @@map("subunidades")
+}
+

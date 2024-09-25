@@ -12,7 +12,9 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/joy": "^5.0.0-beta.48",
+    "@prisma/client": "^5.20.0",
     "next": "14.2.8",
+    "prisma": "^5.20.0",
     "react": "^18",
     "react-dom": "^18"
   },
