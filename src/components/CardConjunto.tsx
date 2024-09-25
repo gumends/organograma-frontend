@@ -1,4 +1,4 @@
-import { Box, Sheet, Typography } from "@mui/joy";
+import { Box, Sheet, Table, Typography } from "@mui/joy";
 import Button from '@mui/joy/Button';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
@@ -34,22 +34,125 @@ export default function CardConjunto(props: CardConjuntoProps) {
             >
                 <Sheet
                     variant="plain"
-                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+                    sx={{ width: 900, height: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
                 >
                     <ModalClose variant="plain" sx={{ m: 1 }} />
-                    <Typography
-                        component="h2"
-                        id="modal-title"
-                        level="h4"
-                        textColor="inherit"
-                        sx={{ fontWeight: 'lg', mb: 1 }}
-                    >
-                        {id}
-                    </Typography>
-                    <Typography id="modal-desc" textColor="text.tertiary">
-                        Make sure to use <code>aria-labelledby</code> on the modal dialog with an
-                        optional <code>aria-describedby</code> attribute.
-                    </Typography>
+                    <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+
+                        <Table>
+                            <thead style={{ border: "0px solid black",  }}>
+                                <th
+                                    colSpan={4}
+                                    style={{
+                                        textAlign: "center",
+                                        padding: 0,
+                                        width: "400%",
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        height: 70,
+                                        border: "0px solid black",
+                                        marginBottom: 30
+                                    }}>
+                                    <Sheet
+                                        sx={{
+                                            width: 200,
+                                            height: 70,
+                                            cursor: "pointer",
+                                            bgcolor: "rgb(11, 50, 151)",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            flexDirection: "column"
+                                        }}
+                                        onClick={() => console.log("clicked")}
+                                    >
+                                        <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                    </Sheet>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr style={{ height: 80, borderBottom: "1px solid black" }}>
+                                    <td>
+                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                            <Sheet
+                                                sx={{
+                                                    width: 200,
+                                                    height: 70,
+                                                    cursor: "pointer",
+                                                    bgcolor: "rgb(11, 50, 151)",
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    flexDirection: "column"
+                                                }}
+                                                onClick={() => console.log("clicked")}
+                                            >
+                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                            </Sheet>
+                                        </Box>
+                                    </td>
+                                    <td>
+                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                            <Sheet
+                                                sx={{
+                                                    width: 200,
+                                                    height: 70,
+                                                    cursor: "pointer",
+                                                    bgcolor: "rgb(11, 50, 151)",
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    flexDirection: "column"
+                                                }}
+                                                onClick={() => console.log("clicked")}
+                                            >
+                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                            </Sheet>
+                                        </Box>
+                                    </td>
+                                    <td>
+                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                            <Sheet
+                                                sx={{
+                                                    width: 200,
+                                                    height: 70,
+                                                    cursor: "pointer",
+                                                    bgcolor: "rgb(11, 50, 151)",
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    flexDirection: "column"
+                                                }}
+                                                onClick={() => console.log("clicked")}
+                                            >
+                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                            </Sheet>
+                                        </Box>
+                                    </td>
+                                    <td>
+                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                            <Sheet
+                                                sx={{
+                                                    width: 200,
+                                                    height: 70,
+                                                    cursor: "pointer",
+                                                    bgcolor: "rgb(11, 50, 151)",
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    flexDirection: "column"
+                                                }}
+                                                onClick={() => console.log("clicked")}
+                                            >
+                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                            </Sheet>
+                                        </Box>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </Box>
                 </Sheet>
             </Modal>
             <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>

@@ -81,7 +81,6 @@ export default function Home() {
                 sx={{
                   width: 200,
                   height: 70,
-                  cursor: "pointer",
                   bgcolor: "rgb(11, 50, 151)",
                   display: "flex",
                   justifyContent: "center",
