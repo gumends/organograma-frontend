@@ -42,17 +42,16 @@ export default function CardConjunto(props: CardConjuntoProps) {
                         <Table>
                             <thead style={{ border: "0px solid black", }}>
                                 <th
-                                    colSpan={5}
+                                    colSpan={2}
                                     style={{
                                         textAlign: "center",
                                         padding: 0,
-                                        width: "500%",
+                                        width: "200%",
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
                                         height: 100,
                                         border: "0px solid black",
-                                        marginBottom: 30,
                                         flexDirection: "column",
                                     }}>
                                     <Sheet
@@ -75,33 +74,13 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                 </th>
                             </thead>
                             <tbody>
-                                <tr style={{ height: 80, borderBottom: "1px solid black" }}>
-                                    
-                                    <td>
-                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                            <Sheet
-                                                sx={{
-                                                    width: 200,
-                                                    height: 70,
-                                                    cursor: "pointer",
-                                                    bgcolor: "rgb(11, 50, 151)",
-                                                    display: "flex",
-                                                    justifyContent: "center",
-                                                    alignItems: "center",
-                                                    flexDirection: "column"
-                                                }}
-                                                onClick={() => console.log("clicked")}
-                                            >   
-                                                <Box>
-                                                    <Box sx={{ width: "50%", borderRight: "2px solid white", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
-                                                    <Box sx={{ width: "50%", borderLeft: "2px solid white", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
-                                                </Box>
-                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
-                                            </Sheet>
-                                        </Box>
-                                    </td>
-                                    <td>
-                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <tr style={{ height: 110, borderBottom: "1px solid black" }}>
+                                    <td style={{ padding: '0px' }}>
+                                        <Box sx={{ width: "100%", height: "100%", display: "flex", justifyContent: "start", alignItems: "center", flexDirection: "column" }}>
+                                            <Box sx={{ height: 40 }}>
+                                                <Box sx={{ width: "50%", height: "100%", borderRight: "2px solid black", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
+                                                <Box sx={{ width: "50%", borderLeft: "2px solid black", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
+                                            </Box>
                                             <Sheet
                                                 sx={{
                                                     width: 200,
@@ -117,10 +96,15 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                             >
                                                 <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
                                             </Sheet>
+
                                         </Box>
                                     </td>
                                     <td>
-                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                        <Box sx={{ width: "100%", height: "100%", display: "flex", justifyContent: "start", alignItems: "center", flexDirection: "column" }}>
+                                            <Box sx={{ height: 40 }}>
+                                                <Box sx={{ width: "50%", height: "100%", borderRight: "2px solid black", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
+                                                <Box sx={{ width: "50%", borderLeft: "2px solid black", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
+                                            </Box>
                                             <Sheet
                                                 sx={{
                                                     width: 200,
@@ -136,44 +120,7 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                             >
                                                 <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
                                             </Sheet>
-                                        </Box>
-                                    </td>
-                                    <td>
-                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                            <Sheet
-                                                sx={{
-                                                    width: 200,
-                                                    height: 70,
-                                                    cursor: "pointer",
-                                                    bgcolor: "rgb(11, 50, 151)",
-                                                    display: "flex",
-                                                    justifyContent: "center",
-                                                    alignItems: "center",
-                                                    flexDirection: "column"
-                                                }}
-                                                onClick={() => console.log("clicked")}
-                                            >
-                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
-                                            </Sheet>
-                                        </Box>
-                                    </td>
-                                    <td>
-                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                                            <Sheet
-                                                sx={{
-                                                    width: 200,
-                                                    height: 70,
-                                                    cursor: "pointer",
-                                                    bgcolor: "rgb(11, 50, 151)",
-                                                    display: "flex",
-                                                    justifyContent: "center",
-                                                    alignItems: "center",
-                                                    flexDirection: "column"
-                                                }}
-                                                onClick={() => console.log("clicked")}
-                                            >
-                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
-                                            </Sheet>
+
                                         </Box>
                                     </td>
                                 </tr>
