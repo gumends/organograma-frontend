@@ -4,8 +4,10 @@ import CardUnico from "./CardUnico";
 
 interface Unidades {
     id: number;
-    subTitulo: string;
+    nome: string;
     descricao: string;
+    cor: string;
+    fundo: string;
 }
 interface CardConjuntoProps {
     unico: boolean;
@@ -31,11 +33,11 @@ export default function LinhaEsquerda(props: CardConjuntoProps) {
                             texto={props.texto}
                         /> :
                         <CardConjunto
-                        unidades={props.unidades}
-                        bgcolor={props.bgcolor}
-                        color={props.color}
-                        texto={props.texto}
-                        onClick={() => console.log("clicked")}
+                            unidades={props.unidades}
+                            bgcolor={props.bgcolor}
+                            color={props.color}
+                            texto={props.texto}
+                            onClick={() => console.log("clicked")}
                         />
                 }
             </Box>

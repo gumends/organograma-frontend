@@ -6,8 +6,10 @@ import { useState } from "react";
 
 interface Unidades {
     id: number;
-    subTitulo: string;
+    nome: string;
     descricao: string;
+    cor: string;
+    fundo: string;
 }
 
 interface CardConjuntoProps {
@@ -30,15 +32,15 @@ export default function CardConjunto(props: CardConjuntoProps) {
                 aria-describedby="modal-desc"
                 open={open}
                 onClose={() => setOpen(false)}
-                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'start', m: 2 }}
+                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'start', m: 2, zIndex: 999999999 }}
+                
             >
                 <Sheet
                     variant="plain"
-                    sx={{ width: 900, height: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+                    sx={{ width: "100%", height: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
                 >
                     <ModalClose variant="plain" sx={{ m: 1 }} />
                     <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-
                         <Table>
                             <thead style={{ border: "0px solid black", }}>
                                 <th
@@ -120,7 +122,6 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                             >
                                                 <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
                                             </Sheet>
-
                                         </Box>
                                     </td>
                                 </tr>
@@ -130,13 +131,23 @@ export default function CardConjunto(props: CardConjuntoProps) {
                 </Sheet>
             </Modal>
             <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>
-                <Sheet sx={{ width: 300, height: 30, bgcolor: props.bgcolor, display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <Typography level="h4" sx={{ fontSize: "17px", color: props.color }}>{props.texto}</Typography>
+                <Sheet sx={{ borderBottom: "2px solid #fff", width: 300, height: 30, bgcolor: props.bgcolor, display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Typography level="h4" sx={{ color: props.color, fontWeight: "bold" }}>{props.texto}</Typography>
                 </Sheet>
                 {
                     props.unidades?.map((unidade) => (
-                        <Sheet key={unidade.id} onClick={() => { setOpen(true); setId(unidade.id) }} sx={{ cursor: "pointer", width: 300, height: 60, textAlign: "center" }}>
-                            <Typography level="h4">{unidade.subTitulo}</Typography>
+                        <Sheet key={unidade.id} onClick={() => { setOpen(true); setId(unidade.id) }} 
+                        sx={{ 
+                            cursor: "pointer", 
+                            width: 300, 
+                            height: '100%', 
+                            textAlign: "center", 
+                            color: unidade.cor, 
+                            bgcolor: unidade.fundo,
+                            borderBottom: "2px solid #fff",
+                            p: 0.5
+                             }}>
+                            <Typography level="h4">{unidade.nome.toUpperCase()}</Typography>
                             <Typography level="body-sm">{unidade.descricao}</Typography>
                         </Sheet>
                     ))

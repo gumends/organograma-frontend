@@ -3,8 +3,10 @@ import CardUnico from "./CardUnico";
 import CardConjunto from "./CardConjunto";
 interface Unidades {
     id: number;
-    subTitulo: string;
+    nome: string;
     descricao: string;
+    cor: string;
+    fundo: string;
 }
 interface CardConjuntoProps {
     unico: boolean;
