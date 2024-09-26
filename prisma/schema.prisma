@@ -26,12 +26,13 @@ model Subtipo {
     descricao   String?
     cor         String?
     fundo       String?
-    ordem       Int         @unique
+    ordem       Int
 
     tipo        Tipo        @relation(fields: [tipo_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
     tipo_id     Int
     unidades    Unidade[]
 
+    @@unique([tipo_id, ordem])
     @@map("subtipos")
 }
 
@@ -39,7 +40,7 @@ model Unidade {
     id          Int         @id @default(autoincrement())
     nome        String
     descricao   String?
-    ordem       Int         @unique
+    ordem       Int
     cor         String?
     fundo       String?
 
@@ -47,6 +48,7 @@ model Unidade {
     subtipo_id  Int
     subunidades Subunidade[]
 
+    @@unique([subtipo_id, ordem])
     @@map("unidades")
 }
 
@@ -54,13 +56,14 @@ model Subunidade {
     id          Int         @id @default(autoincrement())
     nome        String
     descricao   String?
-    ordem       Int         @unique
+    ordem       Int
     cor         String?
     fundo       String?
 
     unidade     Unidade     @relation(fields: [unidade_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
     unidade_id  Int
 
+    @@unique([unidade_id, ordem])
     @@map("subunidades")
 }
 
