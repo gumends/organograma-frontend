@@ -40,39 +40,66 @@ export default function CardConjunto(props: CardConjuntoProps) {
                     <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
 
                         <Table>
-                            <thead style={{ border: "0px solid black",  }}>
+                            <thead style={{ border: "0px solid black", }}>
                                 <th
-                                    colSpan={4}
+                                    colSpan={5}
                                     style={{
                                         textAlign: "center",
                                         padding: 0,
-                                        width: "400%",
+                                        width: "500%",
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
-                                        height: 70,
+                                        height: 100,
                                         border: "0px solid black",
-                                        marginBottom: 30
+                                        marginBottom: 30,
+                                        flexDirection: "column",
                                     }}>
                                     <Sheet
                                         sx={{
                                             width: 200,
                                             height: 70,
-                                            cursor: "pointer",
                                             bgcolor: "rgb(11, 50, 151)",
                                             display: "flex",
                                             justifyContent: "center",
                                             alignItems: "center",
                                             flexDirection: "column"
                                         }}
-                                        onClick={() => console.log("clicked")}
                                     >
-                                        <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                        <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>{id}</Typography>
                                     </Sheet>
+                                    <Box width={"80%"} sx={{ height: 40, display: "flex", borderBottom: "2px solid black", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+                                        <Box style={{ border: "0px solid black", height: "100%", borderRight: "2px solid black", padding: 0 }}></Box>
+                                        <Box style={{ border: "0px solid black", height: "100%", borderLeft: "2px solid black", padding: 0 }}></Box>
+                                    </Box>
                                 </th>
                             </thead>
                             <tbody>
                                 <tr style={{ height: 80, borderBottom: "1px solid black" }}>
+                                    
+                                    <td>
+                                        <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                            <Sheet
+                                                sx={{
+                                                    width: 200,
+                                                    height: 70,
+                                                    cursor: "pointer",
+                                                    bgcolor: "rgb(11, 50, 151)",
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    flexDirection: "column"
+                                                }}
+                                                onClick={() => console.log("clicked")}
+                                            >   
+                                                <Box>
+                                                    <Box sx={{ width: "50%", borderRight: "2px solid white", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
+                                                    <Box sx={{ width: "50%", borderLeft: "2px solid white", display: "flex", justifyContent: "center", alignItems: "center" }}></Box>
+                                                </Box>
+                                                <Typography level="h4" sx={{ fontSize: "17px", color: "white" }}>Teste</Typography>
+                                            </Sheet>
+                                        </Box>
+                                    </td>
                                     <td>
                                         <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                                             <Sheet
@@ -156,7 +183,7 @@ export default function CardConjunto(props: CardConjuntoProps) {
                 </Sheet>
             </Modal>
             <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>
-                <Sheet sx={{ width: 300, height: 30, cursor: "pointer", bgcolor: props.bgcolor, display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Sheet sx={{ width: 300, height: 30, bgcolor: props.bgcolor, display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Typography level="h4" sx={{ fontSize: "17px", color: props.color }}>{props.texto}</Typography>
                 </Sheet>
                 {

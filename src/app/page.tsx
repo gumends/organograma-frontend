@@ -6,42 +6,11 @@ import { Box, Divider, Sheet, Table, Typography } from "@mui/joy";
 
 const teste = [
   {
-    unico: false,
+    unico: true,
     bgcolor: "rgb(11, 50, 151)",
     color: "white",
     texto: "teste",
-    unidades: [
-      {
-        id: 1,
-        subTitulo: "teste",
-        descricao: "teste"
-      },
-      {
-        id: 2,
-        subTitulo: "teste2",
-        descricao: "teste2"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      }
-    ],
+    unidades: [],
     lado: true
   },
   {
@@ -54,31 +23,6 @@ const teste = [
         id: 1,
         subTitulo: "teste",
         descricao: "teste"
-      },
-      {
-        id: 2,
-        subTitulo: "teste2",
-        descricao: "teste2"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
       },
       {
         id: 4,
@@ -89,45 +33,30 @@ const teste = [
     lado: false
   },
   {
-    unico: true,
+    unico: false,
     bgcolor: "rgb(11, 50, 151)",
     color: "#fff",
     texto: "tewadste",
     unidades: [
-    ],
-    lado: true
-  },
-  {
-    unico: false,
-    bgcolor: "rgb(18, 50, 151)",
-    color: "#fff",
-    texto: "ATIC",
-    unidades: [
       {
-        id: 3,
-        subTitulo: "GGGG",
-        descricao: "GGGG"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
+        id: 1,
+        subTitulo: "teste",
+        descricao: "teste"
       },
       {
         id: 4,
         subTitulo: "HHHH",
         descricao: "HHHH"
       }
+    ],
+    lado: true
+  },
+  {
+    unico: true,
+    bgcolor: "rgb(18, 50, 151)",
+    color: "#fff",
+    texto: "ATIC",
+    unidades: [
     ],
     lado: false
   }
@@ -191,7 +120,7 @@ export default function Home() {
                       border: "0px solid black",
                       borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
                       borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
-                      padding: 0
+                      padding: "10px 0px",
                     }}
                   >
                     {item.lado ? (
