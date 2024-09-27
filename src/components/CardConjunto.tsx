@@ -51,12 +51,12 @@ export default function CardConjunto(props: CardConjuntoProps) {
     const [fundoSubtipo, setFundoSubtipo] = useState<string>("");
     const [cor, setCor] = useState<string>("");
     const [corSubtipo, setCorSubtipo] = useState<string>("");
+    const [descricao, setDescricao] = useState<string>("");
 
     useEffect(() => {
     }, [])
 
     const [open, setOpen] = useState(false);
-    const [id, setId] = useState(0);
 
     return (
         <>
@@ -103,7 +103,7 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                             }}
                                             onClick={() => console.log("clicked")}
                                         >
-                                            <Typography level="h4" sx={{ fontSize: "17px", color: corSubtipo }}>{tituloSubtipo}</Typography>
+                                            <Typography level="h4" sx={{ fontSize: "17px", color: corSubtipo }}>{tituloSubtipo.toLocaleUpperCase()}</Typography>
                                         </Sheet>
                                     </th>
                                 </tr>
@@ -129,50 +129,59 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                                     border: "0px solid black",
                                                     borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
                                                     borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
-                                                    padding: "10px 0px"
+                                                    padding: "0px"
                                                 }}
                                             >
                                                 {item.ordem % 2 ? (
                                                     <LinhaEsquerda
-                                                    unico={item.subtipos && item.subtipos.length > 0 ? false : true}
-                                                    bgcolor={item.fundo}
-                                                    color={item.cor}
-                                                    texto={item.nome}
-                                                    subtipos={item.subtipos}
-                                                />
+                                                        unico={item.subtipos && item.subtipos.length > 0 ? false : true}
+                                                        bgcolor={item.fundo}
+                                                        color={item.cor}
+                                                        texto={item.nome}
+                                                        subtipos={item.subtipos}
+                                                        descricao={descricao}
+                                                    />
                                                 ) : (
                                                     <LinhaDireita
-                                                    unico={item.subtipos && item.subtipos.length > 0 ? false : true}
-                                                    bgcolor={item.fundo}
-                                                    color={item.cor}
-                                                    texto={item.nome}
-                                                    subtipos={item.subtipos}
-                                                />
+                                                        unico={item.subtipos && item.subtipos.length > 0 ? false : true}
+                                                        bgcolor={item.fundo}
+                                                        color={item.cor}
+                                                        texto={item.nome}
+                                                        subtipos={item.subtipos}
+                                                        descricao={descricao}
+                                                    />
                                                 )}
                                             </td>
                                         ))}
                                     </tr>
-                                )) : null}
+                                )) :
+                                    <tr aria-colspan={4}>
+                                        <Sheet sx={{ width: '200%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                            <Typography color="neutral" level="body-md" sx={{ width: '50%', fontWeight: "bold", textAlign: "center", padding: "20px 10px", bgcolor: 'background.level1'}}>Nenhum dado encontrado</Typography>
+                                        </Sheet>
+                                    </tr>
+                                }
                             </tbody>
                         </Table>
                     </Box>
                 </Sheet>
             </Modal>
-            <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>
+            <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column', pb: 2 }}>
                 <Sheet sx={{ borderBottom: "2px solid #fff", width: 300, height: 30, bgcolor: props.bgcolor, display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Typography level="h4" sx={{ color: props.color, fontWeight: "bold" }}>{props.texto}</Typography>
                 </Sheet>
                 {
                     props.subtipos?.map((subtipo) => (
-                        <Sheet key={subtipo.id} 
-                        onClick={() => { 
-                            setOpen(true); 
-                            setTituloSubtipo(subtipo.nome); 
-                            setFundoSubtipo(props.bgcolor); 
-                            setCor(subtipo.cor);
-                            setDados(subtipo.unidades ? subtipo.unidades : []);
-                            setCorSubtipo(props.color);
-                        }}
+                        <Sheet key={subtipo.id}
+                            onClick={() => {
+                                setOpen(true);
+                                setTituloSubtipo(subtipo.nome);
+                                setFundoSubtipo(props.bgcolor);
+                                setCor(subtipo.cor);
+                                setDados(subtipo.unidades ? subtipo.unidades : []);
+                                setCorSubtipo(props.color);
+                                setDescricao(subtipo.descricao);
+                            }}
                             sx={{
                                 cursor: "pointer",
                                 width: 300,

@@ -24,6 +24,7 @@ interface CardConjuntoProps {
     color: string;
     texto: string;
     subtipos?: Subtipos[];
+    descricao?: string;
 }
 export default function LinhaDireita( props: CardConjuntoProps ) {
     return (
@@ -39,6 +40,7 @@ export default function LinhaDireita( props: CardConjuntoProps ) {
                             bgcolor={props.bgcolor}
                             color={props.color}
                             texto={props.texto}
+                            descricao={props.descricao}
                         /> :
                         <CardConjunto
                             subtipos={props.subtipos}

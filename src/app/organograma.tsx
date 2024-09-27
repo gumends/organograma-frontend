@@ -66,33 +66,76 @@ export default function Home(props: any) {
             }, []).map((pair, index) => (
               <tr key={index}>
                 {pair.map((item: any, colIndex: any) => (
-                  <td
-                    key={colIndex}
-                    style={{
-                      border: "0px solid black",
-                      borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
-                      borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
-                      padding: "10px 0px"
-                    }}
-                  >
-                    {item.ordem % 2 ? (
-                      <LinhaDireita
-                        unico={item.subtipos && item.subtipos.length > 0 ? false : true}
-                        bgcolor={item.fundo}
-                        color={item.cor}
-                        texto={item.nome}
-                        subtipos={item.subtipos}
-                      />
-                    ) : (
-                      <LinhaEsquerda
-                        unico={item.subtipos && item.subtipos.length > 0 ? false : true}
-                        bgcolor={item.fundo}
-                        color={item.cor}
-                        texto={item.nome}
-                        subtipos={item.subtipos}
-                      />
-                    )}
-                  </td>
+                  item.subtipos && item.subtipos.length > 0 ? null :
+                    <td
+                      key={colIndex}
+                      style={{
+                        border: "0px solid black",
+                        borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
+                        borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
+                        padding: "0px"
+                      }}
+                    >
+                      {item.ordem % 2 ? (
+                        <LinhaDireita
+                          unico={item.subtipos && item.subtipos.length > 0 ? false : true}
+                          bgcolor={item.fundo}
+                          color={item.cor}
+                          texto={item.nome}
+                          subtipos={item.subtipos}
+                        />
+                      ) : (
+                        <LinhaEsquerda
+                          unico={item.subtipos && item.subtipos.length > 0 ? false : true}
+                          bgcolor={item.fundo}
+                          color={item.cor}
+                          texto={item.nome}
+                          subtipos={item.subtipos}
+                        />
+                      )}
+                    </td>
+                ))}
+              </tr>
+            )) : null}
+            {dados && dados.length > 0 ? dados.reduce((acc: any[], item: any, index: any) => {
+              if (index % 2 === 0) {
+                acc.push([item]);
+              } else {
+                acc[acc.length - 1].push(item);
+              }
+              return acc;
+            }, []).map((pair, index) => (
+              <tr key={index}>
+                {pair.map((item: any, colIndex: any) => (
+                  item.subtipos && item.subtipos.length > 0 ?
+                    <td
+                      key={colIndex}
+                      style={{
+                        border: "0px solid black",
+                        borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
+                        borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
+                        padding: "0px"
+                      }}
+                    >
+                      {item.ordem % 2 ? (
+                        <LinhaDireita
+                          unico={item.subtipos && item.subtipos.length > 0 ? false : true}
+                          bgcolor={item.fundo}
+                          color={item.cor}
+                          texto={item.nome}
+                          subtipos={item.subtipos}
+                        />
+                      ) : (
+                        <LinhaEsquerda
+                          unico={item.subtipos && item.subtipos.length > 0 ? false : true}
+                          bgcolor={item.fundo}
+                          color={item.cor}
+                          texto={item.nome}
+                          subtipos={item.subtipos}
+                        />
+                      )}
+                    </td>
+                    : null
                 ))}
               </tr>
             )) : null}

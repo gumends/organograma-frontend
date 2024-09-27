@@ -20,6 +20,7 @@ interface Subtipos {
     unidades: Unidades[];
 }
 interface CardConjuntoProps {
+    descricao?: string;
     unico: boolean;
     bgcolor: string;
     color: string;
@@ -41,6 +42,7 @@ export default function LinhaEsquerda(props: CardConjuntoProps) {
                             bgcolor={props.bgcolor}
                             color={props.color}
                             texto={props.texto}
+                            descricao={props.descricao}
                         /> :
                         <CardConjunto
                             subtipos={props.subtipos}
