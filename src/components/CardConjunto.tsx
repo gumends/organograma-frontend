@@ -14,6 +14,7 @@ interface Unidades {
     fundo: string;
     nome: string;
     ordem: number;
+    subtipo_id: number;
 }
 
 interface Subtipos {
@@ -22,7 +23,17 @@ interface Subtipos {
     descricao: string;
     cor: string;
     fundo: string;
+    tipo_id: number;
     unidades?: Unidades[];
+}
+
+export interface Tipos {
+    id: number;
+    nome: string;
+    descricao: string;
+    cor: string;
+    fundo: string;
+    subtipos?: Subtipos[];
 }
 
 interface CardConjuntoProps {
