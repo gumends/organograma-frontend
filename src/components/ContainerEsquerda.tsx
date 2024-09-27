@@ -49,7 +49,6 @@ export default function LinhaEsquerda(props: CardConjuntoProps) {
                             bgcolor={props.bgcolor}
                             color={props.color}
                             texto={props.texto}
-                            onClick={() => console.log("clicked")}
                         />
                 }
             </Box>

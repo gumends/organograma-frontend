@@ -47,7 +47,6 @@ export default function LinhaDireita( props: CardConjuntoProps ) {
                             bgcolor={props.bgcolor}
                             color={props.color}
                             texto={props.texto}
-                            onClick={() => console.log("clicked")}
                         />
                 }
             </Box>
