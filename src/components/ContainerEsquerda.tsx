@@ -4,17 +4,27 @@ import CardUnico from "./CardUnico";
 
 interface Unidades {
     id: number;
+    cor: string;
+    descricao: string;
+    fundo: string;
+    nome: string;
+    ordem: number;
+}
+
+interface Subtipos {
+    id: number;
     nome: string;
     descricao: string;
     cor: string;
     fundo: string;
+    unidades: Unidades[];
 }
 interface CardConjuntoProps {
     unico: boolean;
     bgcolor: string;
     color: string;
     texto: string;
-    unidades?: Unidades[]
+    subtipos?: Subtipos[]
 }
 
 export default function LinhaEsquerda(props: CardConjuntoProps) {
@@ -33,7 +43,7 @@ export default function LinhaEsquerda(props: CardConjuntoProps) {
                             texto={props.texto}
                         /> :
                         <CardConjunto
-                            unidades={props.unidades}
+                            subtipos={props.subtipos}
                             bgcolor={props.bgcolor}
                             color={props.color}
                             texto={props.texto}

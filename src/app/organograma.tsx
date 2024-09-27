@@ -5,63 +5,6 @@ import LinhaEsquerda from "@/components/ContainerEsquerda";
 import { Box, Divider, Sheet, Table, Typography } from "@mui/joy";
 import { use, useEffect, useState } from "react";
 
-const teste = [
-  {
-    unico: true,
-    bgcolor: "rgb(11, 50, 151)",
-    color: "white",
-    texto: "teste",
-    unidades: [],
-    lado: true
-  },
-  {
-    unico: false,
-    bgcolor: "rgb(11, 50, 151)",
-    color: "white",
-    texto: "teste",
-    unidades: [
-      {
-        id: 1,
-        subTitulo: "teste",
-        descricao: "teste"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      }
-    ],
-    lado: false
-  },
-  {
-    unico: false,
-    bgcolor: "rgb(11, 50, 151)",
-    color: "#fff",
-    texto: "tewadste",
-    unidades: [
-      {
-        id: 1,
-        subTitulo: "teste",
-        descricao: "teste"
-      },
-      {
-        id: 4,
-        subTitulo: "HHHH",
-        descricao: "HHHH"
-      }
-    ],
-    lado: true
-  },
-  {
-    unico: true,
-    bgcolor: "rgb(18, 50, 151)",
-    color: "#fff",
-    texto: "ATIC",
-    unidades: [
-    ],
-    lado: false
-  }
-]
 export default function Home(props: any) {
 
   const [dados, setDados] = useState([]);
@@ -138,7 +81,7 @@ export default function Home(props: any) {
                         bgcolor={item.fundo}
                         color={item.cor}
                         texto={item.nome}
-                        unidades={item.subtipos}
+                        subtipos={item.subtipos}
                       />
                     ) : (
                       <LinhaEsquerda
@@ -146,7 +89,7 @@ export default function Home(props: any) {
                         bgcolor={item.fundo}
                         color={item.cor}
                         texto={item.nome}
-                        unidades={item.subtipos}
+                        subtipos={item.subtipos}
                       />
                     )}
                   </td>

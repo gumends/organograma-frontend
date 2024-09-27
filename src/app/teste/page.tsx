@@ -20,7 +20,7 @@ export default async function Teste() {
             }
         }
     });
-    console.log(data);
+    
     return (
         <div>
             {JSON.stringify(data)}

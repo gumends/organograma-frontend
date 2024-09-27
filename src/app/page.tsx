@@ -22,7 +22,10 @@ export default async function page() {
             }
         }
     });
+
+
+
     return (
-        <Organograma data={data} />
+        <Organograma data={data}/>
     );
 }
