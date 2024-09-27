@@ -99,8 +99,8 @@ export default function CardConjunto(props: CardConjuntoProps) {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style={{ border: "0px solid black", borderRight: "1px solid black", padding: 0 }}></td>
-                                    <td style={{ border: "0px solid black", borderLeft: "1px solid black", padding: 0 }}></td>
+                                    <td style={{ border: "0px solid black", borderRight: "2px solid black", padding: 0 }}></td>
+                                    <td style={{ border: "0px solid black", borderLeft: "0px solid black", padding: 0 }}></td>
                                 </tr>
                                 {dados && dados.length > 0 ? dados.reduce((acc: any[], item: any, index: any) => {
                                     if (index % 2 === 0) {
@@ -116,8 +116,8 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                                 key={colIndex}
                                                 style={{
                                                     border: "0px solid black",
-                                                    borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
-                                                    borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
+                                                    borderRight: (colIndex === 0 && pair.length > 1) ? "2px solid black" : "0px solid black",
+                                                    borderLeft: (colIndex === 1) ? "0px solid black" : "0px solid black",
                                                     padding: "0px"
                                                 }}
                                             >
@@ -146,7 +146,7 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                 )) :
                                     <tr aria-colspan={4}>
                                         <Sheet sx={{ width: '200%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                            <Typography color="neutral" level="body-md" sx={{ width: '50%', fontWeight: "bold", textAlign: "center", padding: "20px 10px", bgcolor: 'background.level1'}}>Nenhum dado encontrado</Typography>
+                                            <Typography color="neutral" level="body-md" sx={{ width: '50%', fontWeight: "bold", textAlign: "center", padding: "20px 10px", bgcolor: 'background.level1' }}>Nenhum dado encontrado</Typography>
                                         </Sheet>
                                     </tr>
                                 }
@@ -157,7 +157,7 @@ export default function CardConjunto(props: CardConjuntoProps) {
             </Modal>
             <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: 'column', pb: 2 }}>
                 <Sheet sx={{ borderBottom: "2px solid #fff", width: 300, height: 30, bgcolor: props.bgcolor, display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <Typography level="h4" sx={{ color: props.color, fontWeight: "bold" }}>{props.texto}</Typography>
+                    <Typography level="h4" sx={{ color: props.color, fontWeight: "bold", fontSize: "17px" }}>{props.texto}</Typography>
                 </Sheet>
                 {
                     props.subtipos?.map((subtipo) => (
@@ -181,8 +181,8 @@ export default function CardConjunto(props: CardConjuntoProps) {
                                 borderBottom: "2px solid #fff",
                                 p: 0.5
                             }}>
-                            <Typography level="h4">{subtipo.nome.toUpperCase()}</Typography>
-                            <Typography level="body-sm">{subtipo.descricao}</Typography>
+                            <Typography level="h4" sx={{ fontSize: "14px" }}>{subtipo.nome.toUpperCase()}</Typography>
+                            <Typography level="body-sm" sx={{ fontSize: "11px" }}>{subtipo.descricao}</Typography>
                         </Sheet>
                     ))
                 }

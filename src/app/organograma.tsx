@@ -52,9 +52,9 @@ export default function Home(props: any) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td style={{ border: "0px solid black", borderRight: "1px solid black", padding: 0 }}></td>
-              <td style={{ border: "0px solid black", borderLeft: "1px solid black", padding: 0 }}></td>
+            <tr style={{}}>
+              <td style={{ border: "0px solid black", borderRight: "2px solid black", padding: 0 }}></td>
+              <td style={{ border: "0px solid black", borderLeft: "0px solid black", padding: 0 }}></td>
             </tr>
             {dados && dados.length > 0 ? dados.reduce((acc: any[], item: any, index: any) => {
               if (index % 2 === 0) {
@@ -64,16 +64,18 @@ export default function Home(props: any) {
               }
               return acc;
             }, []).map((pair, index) => (
-              <tr key={index}>
+              <tr
+                key={index}
+              >
                 {pair.map((item: any, colIndex: any) => (
                   item.subtipos && item.subtipos.length > 0 ? null :
                     <td
                       key={colIndex}
                       style={{
                         border: "0px solid black",
-                        borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
-                        borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
-                        padding: "0px"
+                        borderRight: (colIndex === 0 && pair.length > 1) ? "2px solid black" : "0px solid black",
+                        borderLeft: (colIndex === 1) ? "0px solid black" : "0px solid black",
+                        padding: 0
                       }}
                     >
                       {item.ordem % 2 ? (
@@ -105,15 +107,27 @@ export default function Home(props: any) {
               }
               return acc;
             }, []).map((pair, index) => (
-              <tr key={index}>
+              <tr
+                key={index}
+              >
+                {index === 1 ?
+                  <td
+                    key={index}
+                    style={{
+                      border: "0px solid black",
+                      borderRight: (index === 1 && pair.length > 1) ? "2px solid black" : "0px solid black",
+                      padding: "0px"
+                    }}
+                  ></td>
+                  : null}
                 {pair.map((item: any, colIndex: any) => (
                   item.subtipos && item.subtipos.length > 0 ?
                     <td
                       key={colIndex}
                       style={{
                         border: "0px solid black",
-                        borderRight: (colIndex === 0 && pair.length > 1) ? "1px solid black" : "0px solid black",
-                        borderLeft: (colIndex === 1) ? "1px solid black" : "0px solid black",
+                        borderRight: (colIndex === 0 && pair.length > 1) ? "2px solid black" : "0px solid black",
+                        borderLeft: (colIndex === 1) ? "0px solid black" : "0px solid black",
                         padding: "0px"
                       }}
                     >
